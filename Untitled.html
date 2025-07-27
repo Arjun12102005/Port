@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; 
+            color: #334155;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 2.25rem; 
+            font-weight: 700; 
+            color: #1e293b; 
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px; /* Underline width */
+            height: 4px; /* Underline thickness */
+            background-color: #6366f1; /* Indigo color for underline */
+            border-radius: 9999px; /* Fully rounded */
+        }
+        .nav-link:hover {
+            color: #6366f1; /* Indigo on hover */
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background-color: #6366f1; /* Indigo */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #4f46e5; /* Darker indigo */
+            transform: translateY(-2px);
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm py-4 fixed w-full z-10 top-0 rounded-b-lg">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600 rounded-md">MyPortfolio</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-700 hover:text-indigo-600 transition duration-300 rounded-md p-2">Home</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600 transition duration-300 rounded-md p-2">About</a>
+                <a href="#skills" class="nav-link text-gray-700 hover:text-indigo-600 transition duration-300 rounded-md p-2">Skills</a>
+                <a href="#portfolio" class="nav-link text-gray-700 hover:text-indigo-600 transition duration-300 rounded-md p-2">Portfolio</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600 transition duration-300 rounded-md p-2">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-indigo-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 shadow-md rounded-b-lg">
+            <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-300 rounded-md mx-2">Home</a>
+            <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-300 rounded-md mx-2">About</a>
+            <a href="#skills" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-300 rounded-md mx-2">Skills</a>
+            <a href="#portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-300 rounded-md mx-2">Portfolio</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-300 rounded-md mx-2">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-20"> <!-- Padding top to account for fixed header -->
+
+        <!-- Home Section -->
+        <section id="home" class="h-screen flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-center p-4 rounded-b-xl shadow-lg">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">Hi, I'm <span class="text-yellow-300">RAJA ARJUN SAI</span>!</h1>
+                <p class="text-xl md:text-2xl mb-8">A versatile <span class="font-semibold">Developer</span> with expertise in C, C++, Java, Python, and Web Technologies.</p>
+                <a href="#portfolio" class="btn-primary text-lg inline-block rounded-full shadow-lg hover:shadow-xl">View My Work</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 bg-white rounded-xl shadow-md mx-4 md:mx-auto max-w-6xl mt-8 p-6">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="section-title mb-12">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                    <div class="md:w-1/3 mb-8 md:mb-0">
+                        <img src="C:\Users\91970\Desktop\photo1.jpg" alt="Your Photo" class="w-64 h-64 md:w-full md:h-auto rounded-full mx-auto object-cover border-4 border-indigo-200 shadow-lg">
+                    </div>
+                    <div class="md:w-2/3 text-lg leading-relaxed text-gray-700 text-left">
+                        <p class="mb-4">Hello! I'm <span class="font-semibold text-indigo-600">Your Name</span>, a passionate developer with a solid background in software development and a curiosity-driven approach to learning. My coding journey began with <span class="font-semibold">Python</span>, where I explored problem-solving through scripting, automation, and data handling. This strong foundation sparked my interest in…applications and OOP design principles for building scalable systems.</p>
+                        <p>As my interest in full-stack development grew, I ventured into <span class="font-semibold">Web Development</span>, where I now build clean, responsive, and engaging interfaces using modern front-end technologies. From backend logic to front-end design, I strive to deliver intuitive and impactful digital experiences that blend functionality with user-centered design.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24 bg-gray-50 rounded-xl shadow-md mx-4 md:mx-auto max-w-6xl mt-8 p-6">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="section-title mb-12">My Skills</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Skill Card 1: C -->
+                    <div class="card p-6 text-center">
+                        <img src="https://placehold.co/60x60/6366F1/FFFFFF?text=C" alt="C Icon" class="mx-auto mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">C</h3>
+                        <p class="text-gray-600">Low-level programming</p>
+                    </div>
+                    <!-- Skill Card 2: C++ -->
+                    <div class="card p-6 text-center">
+                        <img src="https://placehold.co/60x60/6366F1/FFFFFF?text=C++" alt="C++ Icon" class="mx-auto mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">C++</h3>
+                        <p class="text-gray-600">Object-oriented, STL</p>
+                    </div>
+                    <!-- Skill Card 3: Java -->
+                    <div class="card p-6 text-center">
+                        <img src="https://placehold.co/60x60/6366F1/FFFFFF?text=Java" alt="Java Icon" class="mx-auto mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Java</h3>
+                        <p class="text-gray-600">Enterprise applications</p>
+                    </div>
+                    <!-- Skill Card 4: Python -->
+                    <div class="card p-6 text-center">
+                        <img src="https://placehold.co/60x60/6366F1/FFFFFF?text=Python" alt="Python Icon" class="mx-auto mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Python</h3>
+                        <p class="text-gray-600">Scripting, Data Analysis</p>
+                    </div>
+                    <!-- Skill Card 5: HTML5 -->
+                    <div class="card p-6 text-center">
+                        <img src="https://placehold.co/60x60/6366F1/FFFFFF?text=HTML" alt="HTML Icon" class="mx-auto mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">HTML5</h3>
+                        <p class="text-gray-600">Semantic markup</p>
+                    </div>
+                    <!-- Skill Card 6: CSS3 -->
+                    <div class="card p-6 text-center">
+                        <img src="https://placehold.co/60x60/6366F1/FFFFFF?text=CSS" alt="CSS Icon" class="mx-auto mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">CSS3</h3>
+                        <p class="text-gray-600">Responsive design, Animations</p>
+                    </div>
+                    <!-- Skill Card 7: JavaScript -->
+                    <div class="card p-6 text-center">
+                        <img src="https://placehold.co/60x60/6366F1/FFFFFF?text=JS" alt="JavaScript Icon" class="mx-auto mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">JavaScript</h3>
+                        <p class="text-gray-600">ES6+, DOM manipulation</p>
+                    </div>
+                    <!-- Skill Card 8: React.js -->
+                    <div class="card p-6 text-center">
+                        <img src="https://placehold.co/60x60/6366F1/FFFFFF?text=React" alt="React Icon" class="mx-auto mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">React.js</h3>
+                        <p class="text-gray-600">Component-based UI</p>
+                    </div>
+                    <!-- Skill Card 9: Tailwind CSS -->
+                    <div class="card p-6 text-center">
+                        <img src="https://placehold.co/60x60/6366F1/FFFFFF?text=Tailwind" alt="Tailwind CSS Icon" class="mx-auto mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Tailwind CSS</h3>
+                        <p class="text-gray-600">Utility-first styling</p>
+                    </div>
+                    <!-- Skill Card 10: Git & GitHub -->
+                    <div class="card p-6 text-center">
+                        <img src="https://placehold.co/60x60/6366F1/FFFFFF?text=Git" alt="Git Icon" class="mx-auto mb-3">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Git & GitHub</h3>
+                        <p class="text-gray-600">Version control</p>
+                    </div>
+                    <!-- Add more skills as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-16 md:py-24 bg-white rounded-xl shadow-md mx-4 md:mx-auto max-w-6xl mt-8 p-6">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="section-title mb-12">My Portfolio</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="card overflow-hidden">
+                        <img src="https://placehold.co/400x250/6366F1/FFFFFF?text=Project+1" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-gray-800">UniTribe</h3>
+                            <p class="text-gray-600 mb-4">Developed a campus-focused web platform enabling students to connect, share resources, and access college-related updates and events.</p>
+                            
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="card overflow-hidden">
+                        <img src="https://placehold.co/400x250/6366F1/FFFFFF?text=Project+2" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-gray-800">My portfolio</h3>
+                            <p class="text-gray-600 mb-4">Designed and built a personal portfolio website to showcase projects, skills, and achievements using modern web development technologies.</p>
+                           
+                        </div>
+                    </div>
+                  
+                    <div class="card overflow-hidden">
+                        <img src="https://placehold.co/400x250/6366F1/FFFFFF?text=Certification" alt="Certification" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-gray-800">Oracle Certification</h3>
+                            <p class="text-gray-600 mb-4">Certified in Oracle Cloud and Generative AI with hands-on experience in deploying AI solutions using Oracle Cloud Infrastructure.
+                            </p>
+                            
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 md:py-24 bg-gray-50 rounded-xl shadow-md mx-4 md:mx-auto max-w-6xl mt-8 p-6 mb-8">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="section-title mb-12">Get In Touch</h2>
+                <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+                    I'm always open to new opportunities and collaborations. Feel free to reach out if you have a project in mind or just want to say hello!
+                </p>
+                <div class="flex flex-col items-center space-y-6">
+                    <a href="mailto:rajaarjun.sai2023@vitstudent.ac.in" class="btn-primary flex items-center space-x-2 text-lg">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                        <span>rajaarjun.sai2023@vitstudent.ac.in</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/arjun-sai-raja-9628952aa/" target="_blank" class="btn-primary flex items-center space-x-2 text-lg">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                    <a href="https://github.com/Arjun12102005" target="_blank" class="btn-primary flex items-center space-x-2 text-lg">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.865-.013-1.7-2.782.602-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.618.069-.606.069-.606 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.087 2.91.829.091-.645.356-1.087.649-1.336-2.22-.253-4.555-1.113-4.555-4.953 0-1.096.39-1.995 1.029-2.693-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.7.118 2.494.329 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.099 2.65 0 .698.639 1.597 1.03 2.693 0 3.85-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.335-.012 2.41-.012 2.727 0 .268.18.579.688.481C21.137 20.281 24 16.526 24 12.017 24 6.484 19.522 2 14 2h-2z" clip-rule="evenodd"/></svg>
+                        <span>GitHub Profile</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6 text-center rounded-t-lg">
+        <div class="container mx-auto px-4">
+            
+        </div>
+    </footer>
+
+    <script>
+  
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+     
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
